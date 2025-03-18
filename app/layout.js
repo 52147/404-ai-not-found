@@ -16,9 +16,9 @@ export default function RootLayout({ children, params }) {
   }
 
   return (
-    <html lang={locale}>
+    <html >
       <body className="min-h-screen flex flex-col">
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        {/* <NextIntlClientProvider locale={locale} messages={messages}> */}
           {/* 🔹 Navbar 固定在頂部 */}
           <Navbar />
 
@@ -27,7 +27,7 @@ export default function RootLayout({ children, params }) {
 
           {/* 🔹 Footer 自動貼底 */}
           <Footer />
-        </NextIntlClientProvider>
+        {/* </NextIntlClientProvider> */}
       </body>
     </html>
   );
