@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { useLocale } from "next-intl";
-import { locales } from "../i18n";
+// import { useLocale } from "next-intl";
+// import { locales } from "../i18n";
 import { Menu, X } from "lucide-react"; // 🔥 使用 Lucide icon
 
 export default function Navbar() {
-  const locale = useLocale();
+//   const locale = useLocale();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
