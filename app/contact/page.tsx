@@ -2,8 +2,12 @@
 import { useState } from "react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [loading, setLoading] = useState(false); // 新增 loading 狀態
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const myEmail = "ainotfound404321@gmail.com"; // 🔹 你的 Email
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -11,32 +15,41 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
 
-    setTimeout(() => {
-      alert("✅ 表單提交成功！");
-      console.log("提交的資料：", formData);
-      setFormData({ name: "", email: "", message: "" }); // 清空表單
-      setLoading(false);
-    }, 1500);
+    const { name, email, message } = formData;
+    const myEmail = "ainotfound404321@gmail.com"; // 🔹 你的 Email
+
+    // 🔹 構造 mailto 連結
+    const mailtoLink = `mailto:${myEmail}?subject=Contact Request from ${encodeURIComponent(
+      name
+    )}&body=👤 Name: ${encodeURIComponent(
+      name
+    )}%0A📧 Email: ${encodeURIComponent(
+      email
+    )}%0A%0A✉️ Message:%0A${encodeURIComponent(message)}`;
+
+    // 🔹 直接打開 Email 客戶端
+    window.location.href = mailtoLink;
   };
 
   return (
     <div className="max-w-2xl mx-auto p-6 space-y-6 bg-white shadow-lg rounded-lg border border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-700 dark:text-white mt-20">
-      {/* 🔹 標題區 */}
-      <h1 className="text-4xl font-bold text-center">聯絡我們</h1>
+      <h1 className="text-4xl font-bold text-center">📩 Contact Us</h1>
       <p className="text-center text-gray-600 dark:text-gray-400">
-        有任何問題或合作意向？請填寫以下表單，我們會盡快回覆！
+        Got questions or business inquiries? Fill out the form below and send us
+        an email!
       </p>
 
       {/* 🔹 表單 */}
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">你的名字</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            Your Name
+          </label>
           <input
             type="text"
             name="name"
-            placeholder="輸入你的名字"
+            placeholder="Enter your name"
             value={formData.name}
             onChange={handleChange}
             required
@@ -45,11 +58,13 @@ export default function Contact() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">你的 Email</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            Your Email
+          </label>
           <input
             type="email"
             name="email"
-            placeholder="輸入你的 Email"
+            placeholder="Enter your email"
             value={formData.email}
             onChange={handleChange}
             required
@@ -58,10 +73,12 @@ export default function Contact() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">你的訊息</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            Your Message
+          </label>
           <textarea
             name="message"
-            placeholder="輸入你的訊息"
+            placeholder="Enter your message"
             value={formData.message}
             onChange={handleChange}
             required
@@ -72,14 +89,27 @@ export default function Contact() {
         {/* 🔹 提交按鈕 */}
         <button
           type="submit"
-          disabled={loading}
-          className={`w-full p-3 text-lg font-semibold text-white rounded-lg transition ${
-            loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
-          }`}
+          className="w-full p-3 text-lg font-semibold text-white rounded-lg bg-blue-500 hover:bg-blue-600 transition"
         >
-          {loading ? "提交中..." : "🚀 送出表單"}
+          🚀 Send Email
         </button>
       </form>
+
+      {/* 🔹 直接提供 Email，讓他們自己開 Gmail 加附件 */}
+      <div className="text-center mt-5">
+        <p className="text-gray-700 dark:text-gray-300">
+          Or email us directly at:
+        </p>
+        <a
+          href={`mailto:${myEmail}`}
+          className="text-blue-500 text-lg font-semibold hover:underline"
+        >
+          {myEmail}
+        </a>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          If you need to send attachments, open Gmail and send them manually.
+        </p>
+      </div>
     </div>
   );
 }
