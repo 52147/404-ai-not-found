@@ -83,11 +83,11 @@ export default function BlogList({ posts }) {
         filteredPosts.map((post) => (
           <li
             key={post.slug}
-            className="mb-3 pb-3 border-b border-gray-300 dark:border-gray-600 dark:text-gray-300 hover:bg-gray-10 dark:hover:bg-gray-700 transition-colors duration-200 cursor-pointer list-none flex flex-row items-center gap-20"
+            className="mb-3 pb-3 border-b border-gray-300 dark:border-gray-600 dark:text-gray-300 hover:bg-gray-10 dark:hover:bg-gray-700 transition-colors duration-200 cursor-pointer list-none flex flex-row items-center gap-10"
           >
             <Link
               href={`/blog/${post.slug}`}
-              className="text-blue-500 hover:underline text-lg font-bold mb-1 dark:text-blue-400 dark:hover:text-blue-300 w-40"
+              className="text-blue-500 hover:underline text-lg font-bold mb-1 dark:text-blue-400 dark:hover:text-blue-300 w-70"
             >
               {post.title}
             </Link>

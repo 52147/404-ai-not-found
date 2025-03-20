@@ -1,6 +1,10 @@
 import { getPostBySlug } from "../../../lib/posts";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm"; // ✅ 支援 Markdown 表格
+import rehypeRaw from "rehype-raw"; // ✅ 支援 HTML 標籤
+import rehypeHighlight from "rehype-highlight"; // ✅ 語法高亮
+import "highlight.js/styles/github.css"; // 你可以換成別的樣式
 import CommentSection from "../../components/CommentSection";
 import Link from "next/link";
 
@@ -9,13 +13,13 @@ export default async function BlogPost({ params }: { params: { slug: string } })
     return notFound();
   }
 
-  const post = await getPostBySlug(params.slug); // ✅ 確保 `await`
+  const post = await getPostBySlug(params.slug);
   if (!post) {
     return notFound();
   }
 
   return (
-    <div className="max-w-3xl mx-auto p-6 space-y-6 bg-white shadow-lg rounded-lg border border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-700 dark:text-white mt-20">
+    <div className="max-w-5xl mx-auto p-6 space-y-6 bg-white shadow-lg rounded-lg border border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-700 dark:text-white mt-20">
       {/* 🔹 返回文章列表 */}
       <Link
         href="/blog"
@@ -45,9 +49,14 @@ export default async function BlogPost({ params }: { params: { slug: string } })
           ))}
       </div>
 
-      {/* 🔹 文章內容 */}
+      {/* 🔹 文章內容 (支援 Markdown 表格 & 高亮) */}
       <div className="prose prose-lg dark:prose-invert leading-relaxed max-w-full">
-        <ReactMarkdown>{post.content}</ReactMarkdown>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]} // ✅ 支援 Markdown 表格
+          rehypePlugins={[rehypeRaw, rehypeHighlight]} // ✅ 支援 HTML & 高亮
+        >
+          {post.content}
+        </ReactMarkdown>
       </div>
 
       {/* 🔹 相關文章 */}
@@ -69,7 +78,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
         </div>
       )}
 
-      {/* 🔹 留言區（間距調整） */}
+      {/* 🔹 留言區 */}
       <div className="mt-10">
         <CommentSection slug={params.slug} />
       </div>

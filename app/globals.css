@@ -24,3 +24,32 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.prose ul {
+  list-style-type: disc; /* 显示黑色圆点 */
+  margin-left: 1.5rem;   /* 添加左边距 */
+}
+.prose ul {
+  list-style-type: disc; /* 确保使用黑点 */
+  margin-left: 1.5rem; /* 让 bullet point 不要贴边 */
+}
+
+.prose ol {
+  list-style-type: decimal; /* 确保有数字编号 */
+  margin-left: 1.5rem;
+}
+/* 調整段落字體大小 */
+.prose p {
+  font-size: 1.125rem; /* 例如 18px */
+  line-height: 1.75rem;
+}
+
+/* 調整 h1、h2、h3 的字體大小 */
+.prose h1 {
+  font-size: 2.5rem !important; /* 視需求調整 */
+}
+.prose h2 {
+  font-size: 2rem !important;
+}
+.prose h3 {
+  font-size: 1.75rem !important;
+}
