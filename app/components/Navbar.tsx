@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react"; // 🔥 使用 Lucide icon
 
 export default function Navbar() {
-//   const locale = useLocale();
+  //   const locale = useLocale();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -22,6 +22,7 @@ export default function Navbar() {
 
         {/* 🔹 桌面版選單 */}
         <div className="hidden md:flex space-x-6">
+          <NavItem href="/about" label="About" />
           <NavItem href="/blog" label="Blog" />
           <NavItem href="/services" label="Services" />
           <NavItem href="/resources" label="Resources" />
@@ -41,6 +42,7 @@ export default function Navbar() {
       {/* 🔹 行動版選單 */}
       {menuOpen && (
         <div className="md:hidden flex flex-col items-center space-y-4 bg-gray-900 py-5 mt-4 rounded-lg shadow-lg">
+          <NavItem href="/about" label="About" mobile />
           <NavItem href="/blog" label="Blog" mobile />
           <NavItem href="/services" label="Services" mobile />
           <NavItem href="/resources" label="Resources" mobile />
