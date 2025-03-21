@@ -24,6 +24,7 @@ export default function Navbar() {
         <div className="hidden md:flex space-x-6">
           <NavItem href="/about" label="About" />
           <NavItem href="/blog" label="Blog" />
+          <NavItem href="/products" label="Products" />
           <NavItem href="/services" label="Services" />
           <NavItem href="/resources" label="Resources" />
           <NavItem href="/contact" label="Contact" />
