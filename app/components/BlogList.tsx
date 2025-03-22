@@ -46,13 +46,13 @@ export default function BlogList({ posts }) {
         )}
       </div>
       {/* 🏷️ 標籤篩選 */}
-      <div className="mb-5 flex flex-wrap">
+      <div className="mb-5 flex flex-wrap mt-3">
         {["全部文章", ...new Set(posts.flatMap((post) => post.tags))].map(
           (tag) => (
             <button
               key={tag}
               onClick={() => setSelectedTag(tag === "全部文章" ? "" : tag)}
-              className={`px-3 py-1 mr-2 text-sm rounded transition ${
+              className={`px-3 py-1 mr-2 text-sm rounded transition mb-3 ${
                 selectedTag === tag
                   ? "bg-blue-600 text-white font-bold shadow-md"
                   : "bg-gray-600 hover:bg-gray-500"
@@ -83,15 +83,16 @@ export default function BlogList({ posts }) {
         filteredPosts.map((post) => (
           <li
             key={post.slug}
-            className="mb-3 pb-3 border-b border-gray-300 dark:border-gray-600 dark:text-gray-300 hover:bg-gray-10 dark:hover:bg-gray-700 transition-colors duration-200 cursor-pointer list-none flex flex-row items-center gap-10"
+            className="mb-3 pb-3 border-b border-gray-300 dark:border-gray-600 dark:text-gray-300 hover:bg-gray-10 dark:hover:bg-gray-700 transition-colors duration-200 cursor-pointer list-none flex flex-row items-center gap-10 display-flex align-items-center"
           >
             <Link
               href={`/blog/${post.slug}`}
-              className="text-blue-500 hover:underline text-lg font-bold mb-1 dark:text-blue-400 dark:hover:text-blue-300 w-70"
+              className="text-blue-500 hover:underline text-lg font-bold mb-1 dark:text-blue-400 dark:hover:text-blue-300 w-90 h-30 display-flex align-items-center"
+              style={{ display: "flex", alignItems: "center" }}
             >
               {post.title}
             </Link>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mb-4 leading-tight ">
+            <p className="text-xs text-gray-500 dark:text-gray-400 mb-4 leading-tight w-30">
               {post.description}
               <br />由 {post.author} 發表
               <br />
@@ -99,11 +100,11 @@ export default function BlogList({ posts }) {
               <br />
               📅 {post.date}
             </p>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-gray-600 dark:text-gray-400 flex flex-wrap">
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="mr-2 bg-gray-200 px-2 py-1 rounded dark:bg-gray-700 dark:text-white"
+                  className="mr-2 bg-gray-200 px-2 py-1 rounded dark:bg-gray-700 dark:text-white mb-4"
                 >
                   {tag}
                 </span>

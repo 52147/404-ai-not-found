@@ -57,5 +57,5 @@ By lowering access barriers and offering deeper functionality, the goal is to su
 I’m currently developing the MVP while researching adaptive cognitive models and user safety patterns. If you're working in emotion-aware AI, psychological UX, or cognitive mapping—I’d love to connect.
 
 <br>  
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/41llwtgp3c10gpcy6y4y.png)
+
 This isn't about replacing therapists. It's about building intelligent tools that help people help themselves.
