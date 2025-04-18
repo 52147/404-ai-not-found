@@ -45,7 +45,7 @@ export default function Navbar() {
         <div className="md:hidden flex flex-col items-center space-y-4 bg-gray-900 py-5 mt-4 rounded-lg shadow-lg">
           <NavItem href="/about" label="About" mobile />
           <NavItem href="/blog" label="Blog" mobile />
-          <NavItem href="/services" label="Services" mobile />
+          {/* <NavItem href="/services" label="Services" mobile /> */}
           <NavItem href="/resources" label="Resources" mobile />
           <NavItem href="/contact" label="Contact" mobile />
         </div>
