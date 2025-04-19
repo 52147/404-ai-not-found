@@ -9,7 +9,7 @@ export default function RootLayout({ children, params }) {
 
   return (
     <html >
-      <body className="min-h-screen flex flex-col">
+      <body className="dark min-h-screen flex flex-col">
         {/* <NextIntlClientProvider locale={locale} messages={messages}> */}
           {/* 🔹 Navbar 固定在頂部 */}
           <Navbar />
