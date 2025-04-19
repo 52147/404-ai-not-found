@@ -110,7 +110,7 @@ export default function Services() {
   return (
     <div className="flex ">
       {/* 左侧固定 Sidebar */}
-      <div className="w-1/4 h-screen top-20 p-5 hidden md:block fixed bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700">
+      <div className="w-1/4 h-screen top-20 p-5 hidden md:block fixed dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700">
         <h1 className="text-2xl font-bold mb-5">🗂️ Service Categories</h1>
         <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-md space-y-4">
           <h2 className="text-xl font-bold mb-3">🔍 Quick Navigation</h2>

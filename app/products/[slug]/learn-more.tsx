@@ -72,7 +72,7 @@ export default function LearnMore() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto p-6 space-y-6 bg-white shadow-md rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-white mt-20">
+    <div className="max-w-5xl mx-auto p-6 space-y-6 shadow-md rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-white mt-20">
       <h1 className="text-4xl font-bold text-center">{product.title}</h1>
       <img src={product.image} alt={product.title} className="w-full h-60 object-cover rounded-lg" />
       <p className="text-gray-700 dark:text-gray-300">{product.overview}</p>

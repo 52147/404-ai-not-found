@@ -34,7 +34,7 @@ export default function CommentSection({ slug }: { slug: string }) {
   };
 
   return (
-    <div className="mt-10 p-5 bg-white shadow-md rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-700 dark:text-white">
+    <div className="mt-10 p-5 shadow-md rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-700 dark:text-white">
       <h2 className="text-2xl font-bold mb-3">💬 留言區</h2>
 
       <div className="mb-5 space-y-3 border-b border-gray-300 pb-5">

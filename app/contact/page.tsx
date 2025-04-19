@@ -33,7 +33,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 space-y-6 bg-white shadow-lg rounded-lg border border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-700 dark:text-white mt-20">
+    <div className="max-w-2xl mx-auto p-6 space-y-6 shadow-lg rounded-lg border border-gray-300 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-700 dark:text-white mt-20">
       <h1 className="text-4xl font-bold text-center">📩 Contact Us</h1>
       <p className="text-center text-gray-600 dark:text-gray-400">
         Got questions or business inquiries? Fill out the form below and send us

@@ -9,7 +9,7 @@ export default function Resources() {
     ];
   
     return (
-      <div className="max-w-3xl mx-auto p-5 space-y-5 bg-white shadow-md rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-700 dark:text-white mt-20">
+      <div className="max-w-3xl mx-auto p-5 space-y-5  shadow-md rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-700 dark:text-white mt-20">
         <h1 className="text-3xl font-bold text-center mb-5">📚 AI 資源分享</h1>
         <p className="text-gray-500 text-center">探索最有價值的 AI 學習資源 🚀</p>
   

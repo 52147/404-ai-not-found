@@ -10,7 +10,7 @@ export default function Accordion({ sections }) {
   };
 
   return (
-    <div className="space-y-4 max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-700 dark:text-white">
+    <div className="space-y-4 max-w-4xl mx-auto p-6 shadow-md rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-700 dark:text-white">
       {sections.map((section, index) => (
         <div
           key={index}

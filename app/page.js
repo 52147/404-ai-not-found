@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <div className=" min-h-screen text-white flex flex-col items-center justify-center p-5 space-y-8 relative overflow-hidden">
-      <div className="bg-white shadow-md rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-700 dark:text-white mt-20 flex flex-col items-center justify-center space-y-10 w-full max-w-4xl p-10">
+      <div className="shadow-md rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-700 dark:text-white mt-20 flex flex-col items-center justify-center space-y-10 w-full max-w-4xl p-10">
         
         {/* 🔹 Header Section */}
         <header className="text-center flex flex-col items-center space-y-3">

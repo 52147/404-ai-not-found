@@ -113,7 +113,7 @@ export default function ServiceDetail() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-6 bg-white shadow-md rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-700 dark:text-white mt-20">
+    <div className="max-w-4xl mx-auto p-6 space-y-6 shadow-md rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-700 dark:text-white mt-20">
       {/* 🔹 Service Title & Price */}
       <h1 className="text-4xl font-bold text-center">{service.title}</h1>
       <p className="text-center text-gray-500">{service.price}</p>
